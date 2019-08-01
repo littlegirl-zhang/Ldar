@@ -8,4 +8,7 @@
     <string name="main_check">仪器校验</string>
     <string name="main_bg">背景值</string>
 
+    <string name="task_detail_name">分区名称</string>
+    <string name="task_detail_progress">完成进度</string>
+
 </resources>

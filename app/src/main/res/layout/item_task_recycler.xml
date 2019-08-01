@@ -13,8 +13,10 @@
             android:visibility="visible"
             android:id="@+id/slide"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/layout_left"
+            android:layout_alignBottom="@+id/layout_left"
+            android:layout_alignTop="@+id/layout_left"
             android:orientation="horizontal">
 
             <TextView
@@ -30,65 +32,6 @@
 
         <include layout="@layout/layout_task_info"
             android:id="@+id/layout_left"/>
-        <!--<LinearLayout-->
-
-            <!--android:id="@+id/layout_left"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:background="@drawable/selector_content_white"-->
-            <!--android:orientation="vertical">-->
-
-            <!--<LinearLayout-->
-                <!--android:layout_marginLeft="@dimen/dp_10"-->
-                <!--android:layout_marginRight="@dimen/dp_10"-->
-                <!--android:orientation="horizontal"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
-                <!--<TextView-->
-                    <!--android:layout_weight="1"-->
-                    <!--android:text="任务描述"-->
-                    <!--android:drawablePadding="@dimen/dp_5"-->
-                    <!--android:drawableLeft="@mipmap/icon_task"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content" />-->
-                <!--<TextView-->
-                    <!--android:id="@+id/item_task_tv_process"-->
-                    <!--android:drawableLeft="@mipmap/icon_task_process"-->
-                    <!--android:text="12/90"-->
-                    <!--android:gravity="center"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content" />-->
-            <!--</LinearLayout>-->
-            <!--<TextView-->
-                <!--android:layout_marginLeft="@dimen/dp_10"-->
-                <!--android:layout_marginRight="@dimen/dp_10"-->
-                <!--android:id="@+id/item_task_tv_desc"-->
-                <!--android:layout_marginTop="@dimen/dp_5"-->
-                <!--android:text="1111112safdagdbdavadvava"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content" />-->
-            <!--<TextView-->
-                <!--android:id="@+id/item_task_tv_date"-->
-                <!--android:layout_marginLeft="@dimen/dp_10"-->
-                <!--android:drawablePadding="@dimen/dp_5"-->
-                <!--android:layout_marginTop="@dimen/dp_10"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:text="2018-01-01 (逾期96天)"-->
-                <!--android:drawableLeft="@mipmap/icon_task_date"-->
-                <!--android:layout_height="wrap_content" />-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/item_task_tv_sort"-->
-                <!--android:layout_marginLeft="@dimen/dp_10"-->
-                <!--android:drawablePadding="@dimen/dp_5"-->
-                <!--android:layout_marginTop="@dimen/dp_10"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:text="常减压装置"-->
-                <!--android:drawableLeft="@mipmap/icon_factory"-->
-                <!--android:layout_height="wrap_content" />-->
-
-
-        <!--</LinearLayout>-->
 
     </RelativeLayout>
 

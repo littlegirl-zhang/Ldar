@@ -1,10 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.activity.TaskDetailActivity">
 
-    <include layout="@layout/layout_task_info"/>
-</android.support.constraint.ConstraintLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/color_base_title"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/icon_task_white"
+                android:drawablePadding="@dimen/dp_5"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/white"
+                android:text="任务描述" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_18"
+                android:id="@+id/task_detail_tv_process"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_task_progress_white"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="12/90" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/task_detail_tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_10"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/white"
+            android:text="1111112safdagdhahahah哈哈哈大会；啊积分大；哦bdavadvava" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/task_detail_tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/icon_task_date_white"
+                android:drawablePadding="@dimen/dp_5"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/white"
+                android:text="2018-01-01 (逾期96天)" />
+
+            <TextView
+                android:id="@+id/task_detail_tv_exported"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="已导出"
+                android:textSize="@dimen/sp_16"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/task_detail_tv_lackbg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_stroke_red_corner"
+                android:padding="@dimen/dp_5"
+                android:visibility="gone"
+                android:text="缺少背景值"
+                android:textColor="@color/red" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/task_detail_tv_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/icon_task_factory_white"
+                android:drawablePadding="@dimen/dp_5"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/white"
+                android:text="常减压装置" />
+
+            <TextView
+                android:background="@drawable/shape_stroke_blue_corner"
+                android:id="@+id/task_detail_tv_export"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:textColor="@color/color_base_title_light"
+                android:paddingTop="@dimen/dp_5"
+                android:paddingBottom="@dimen/dp_5"
+                android:drawableLeft="@mipmap/icon_export"
+                android:drawablePadding="@dimen/dp_10"
+                android:text="导出"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/task_detail_tv_uncheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_stroke_red_corner"
+                android:padding="@dimen/dp_5"
+                android:text="未校验仪器"
+                android:textColor="@color/red"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_E0E0E0"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/task_detail_name"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/task_detail_progress"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/task_detail_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

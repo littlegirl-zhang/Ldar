@@ -61,7 +61,7 @@ public class BaseActivity extends ABActivity{
     }
 
     @Override
-    protected boolean isLLRightGone() {
+    protected boolean isLLRightVisiable() {
         return true;
     }
 }

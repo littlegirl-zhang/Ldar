@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import com.sinopec.ldar.R;
 
 public class RecyclerItemView extends HorizontalScrollView {
-    private LinearLayout slide;//滑动弹出的按钮容器
+    private View slide;//滑动弹出的按钮容器
 
     private int slideWidth; // 滑动弹出这个控件的宽度
 
@@ -35,7 +35,7 @@ public class RecyclerItemView extends HorizontalScrollView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        slide = (LinearLayout) findViewById(R.id.slide);
+        slide = findViewById(R.id.slide);
     }
 
     //通过布局获取按钮宽度

@@ -15,7 +15,8 @@ import android.widget.Spinner;
 import com.orhanobut.logger.Logger;
 import com.sinopec.ldar.R;
 import com.sinopec.ldar.ui.activity.TaskDetailActivity;
-import com.sinopec.ldar.ui.adapter.RecyclerViewAdapter;
+import com.sinopec.ldar.ui.adapter.TaskAdapter;
+import com.sinopec.ldar.ui.view.OnAdapterItemClickListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,7 +27,7 @@ public class FragmentTask extends Fragment {
 
     private Spinner mSpinner;
     private RecyclerView mRecyclerView;
-    private RecyclerViewAdapter mAdapter;      //item_task_recycler 布局的 适配器
+    private TaskAdapter mAdapter; //item_task_recycler 布局的 适配器
     private List<Map<String, Object>> mList;
 
 
@@ -43,7 +44,7 @@ public class FragmentTask extends Fragment {
     private void initData() {
         Map<String, Object> map;
         for (int i = 0; i < 20; i++) {
-            map = new HashMap<String, Object>();
+            map = new HashMap<>();
             map.put("cardId", "测试测试是十四号 if 好烦嗲破发后到 v 阿迪女哈UI风好大 v 奶茶" + i);
             mList.add(map);
         }
@@ -57,14 +58,14 @@ public class FragmentTask extends Fragment {
         mSpinner.setOnItemSelectedListener(onItemSelectedListener);
         //将 RecyclerView 布局设置为线性布局
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mAdapter = new RecyclerViewAdapter(getActivity(), mList);
+        mAdapter = new TaskAdapter(getActivity(), mList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mAdapter.setOnSlidListener(itemSlideClickListener);
         mAdapter.setOnItemClick(adapterItemClickListener);
     }
 
-    RecyclerViewAdapter.OnAdapterItemClickListener adapterItemClickListener=new RecyclerViewAdapter.OnAdapterItemClickListener() {
+    OnAdapterItemClickListener adapterItemClickListener = new OnAdapterItemClickListener() {
         @Override
         public void onItemClick(View view, int position) {
             Intent intent = new Intent();
@@ -75,7 +76,7 @@ public class FragmentTask extends Fragment {
             startActivity(intent);
         }
     };
-    RecyclerViewAdapter.OnItemSlideClickListener itemSlideClickListener=new RecyclerViewAdapter.OnItemSlideClickListener() {
+    TaskAdapter.OnItemSlideClickListener itemSlideClickListener = new TaskAdapter.OnItemSlideClickListener() {
         @Override
         public void onDeleteBtnCilck(View view, int position) {
             mAdapter.removeData(position);

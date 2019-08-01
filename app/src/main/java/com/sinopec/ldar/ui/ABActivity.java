@@ -22,7 +22,7 @@ import android.widget.TextView;
 import com.sinopec.ldar.R;
 import com.sinopec.ldar.app.App;
 
-public abstract class ABActivity extends AppCompatActivity implements View.OnClickListener{
+public abstract class ABActivity extends AppCompatActivity implements View.OnClickListener {
 
     // 当前类名
     protected final String TAG = this.getClass().getSimpleName();
@@ -95,8 +95,8 @@ public abstract class ABActivity extends AppCompatActivity implements View.OnCli
         if (isTitlePanelGone()) {
             setTitlePanelGone();
         }
-        if (isLLRightGone()){
-            setLLRightGone();
+        if (isLLRightVisiable()) {
+            setLLRightVisiable();
         }
         // 返回视图
         initView(mContentView);
@@ -154,7 +154,6 @@ public abstract class ABActivity extends AppCompatActivity implements View.OnCli
 
     private void initBaseListener() {
         mLLBack.setOnClickListener(this);
-        //        mTvTitle.setOnClickListener(this);
         mTvRight.setOnClickListener(this);
         mIvFilter.setOnClickListener(this);
         mIvSearch.setOnClickListener(this);
@@ -164,14 +163,14 @@ public abstract class ABActivity extends AppCompatActivity implements View.OnCli
      * 初始化控件
      */
     private void initBaseView() {
-        mRlTop = (RelativeLayout) findViewById(R.id.rl_base_top);
-        mLLBack = (LinearLayout) findViewById(R.id.ll_base_back);
-        mTvTitle = (TextView) findViewById(R.id.tv_base_title);
-        mTvRight = (TextView) findViewById(R.id.tv_base_right);
-        mIvFilter=findViewById(R.id.iv_base_filter);
-        mIvSearch=findViewById(R.id.iv_base_search);
-        mLLRight=findViewById(R.id.ll_base_right);
-        mLlContent = (LinearLayout) findViewById(R.id.ll_base_content);
+        mRlTop = findViewById(R.id.rl_base_top);
+        mLLBack = findViewById(R.id.ll_base_back);
+        mTvTitle = findViewById(R.id.tv_base_title);
+        mTvRight = findViewById(R.id.tv_base_right);
+        mIvFilter = findViewById(R.id.iv_base_filter);
+        mIvSearch = findViewById(R.id.iv_base_search);
+        mLLRight = findViewById(R.id.ll_base_right);
+        mLlContent = findViewById(R.id.ll_base_content);
     }
 
     private void steepStatusBar() {
@@ -345,13 +344,13 @@ public abstract class ABActivity extends AppCompatActivity implements View.OnCli
         mLLBack.setVisibility(View.GONE);
     }
 
-    protected abstract boolean isLLRightGone();
+    protected abstract boolean isLLRightVisiable();
 
     /**
      * 隐藏右侧功能按钮
      */
-    protected void setLLRightGone() {
-        mLLRight.setVisibility(View.GONE);
+    protected void setLLRightVisiable() {
+        mLLRight.setVisibility(View.VISIBLE);
     }
 
     protected abstract boolean isTvRightGone();
