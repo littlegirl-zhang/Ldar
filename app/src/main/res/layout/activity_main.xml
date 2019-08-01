@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@color/color_base_title">
+
+        <ImageView
+            android:id="@+id/main_iv_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@mipmap/icon_option" />
+
+        <RadioGroup
+            android:id="@+id/main_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_toRightOf="@id/main_iv_exit"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:padding="@dimen/dp_3"
+                android:id="@+id/main_rb_task"
+                style="@style/main_tab_radio"
+                android:checked="true"
+                android:text="@string/main_task" />
+
+            <RadioButton
+                android:padding="@dimen/dp_3"
+                android:id="@+id/main_rb_check"
+                style="@style/main_tab_radio"
+                android:text="@string/main_check" />
+
+            <RadioButton
+                android:padding="@dimen/dp_3"
+                android:id="@+id/main_rb_bg"
+                style="@style/main_tab_radio"
+                android:text="@string/main_bg" />
+
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+</LinearLayout>

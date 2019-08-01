@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ldar</string>
+
+    <string name="login_operator">操作人员</string>
+    <string name="login_btn">登陆</string>
+
+    <string name="main_task">任务列表</string>
+    <string name="main_check">仪器校验</string>
+    <string name="main_bg">背景值</string>
+
+</resources>

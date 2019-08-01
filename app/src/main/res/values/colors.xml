@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!-- Base -->
+    <color name="color_base_title">#3140AF</color>
+    <color name="color_base_title_pressed">#212189</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="btn_blue_pressed">#0066FF</color>
+    <color name="btn_blue_normal">#1e90ff</color>
+    <color name="color_f6">#f6f6f6</color>
+    <color name="c_f87952">#f87952</color>
+    <color name="c_404040">#404040</color>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sorts">
+        <item>显示全部</item>
+        <item>未导出</item>
+        <item>缺少背景值</item>
+        <item>未校验仪器</item>
+    </string-array>
+</resources>
