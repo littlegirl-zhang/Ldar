@@ -82,7 +82,7 @@
                 android:id="@+id/item_task_tv_lackbg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_stroke_red_corner"
+                android:background="@drawable/shape_stroke_red_solid_white_corner"
                 android:padding="@dimen/dp_5"
                 android:visibility="gone"
                 android:text="缺少背景值"
@@ -107,7 +107,7 @@
                 android:text="常减压装置" />
 
             <TextView
-                android:background="@drawable/shape_stroke_blue_corner"
+                android:background="@drawable/shape_stroke_base_solid_white_corner"
                 android:id="@+id/item_task_tv_export"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -126,7 +126,7 @@
                 android:id="@+id/item_task_tv_uncheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_stroke_red_corner"
+                android:background="@drawable/shape_stroke_red_solid_white_corner"
                 android:padding="@dimen/dp_5"
                 android:text="未校验仪器"
                 android:textColor="@color/red"

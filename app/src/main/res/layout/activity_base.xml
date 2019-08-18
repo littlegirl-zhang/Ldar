@@ -7,7 +7,7 @@
         android:id="@+id/rl_base_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/dp_15"
+        android:padding="@dimen/dp_10"
         android:background="@color/color_base_title"
 
         >
@@ -30,6 +30,26 @@
                 android:background="@mipmap/arrow_left_01" />
 
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_base_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_base_back_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_margin="@dimen/dp_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/icon_close" />
+
+        </LinearLayout>
 
 
         <TextView
@@ -48,7 +68,6 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/dp_10"
-            android:background="@drawable/selector_base_back_bg"
             android:text="完成"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -80,7 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/rl_base_top"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical"/>
 
     <ProgressBar
         android:id="@+id/pb_base"

@@ -20,5 +20,25 @@
         <item name="android:textSize">20sp</item>
     </style>
 
+    <style name="style_subregion_tv">
+        <item name="android:background">@drawable/shape_stroke_blue</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingTop">@dimen/dp_3</item>
+        <item name="android:paddingBottom">@dimen/dp_3</item>
+    </style>
+
+    <style name="style_subregion_rb">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:enabled">false</item>
+    </style>
+
+
 
 </resources>

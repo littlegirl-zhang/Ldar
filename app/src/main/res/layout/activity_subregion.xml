@@ -13,40 +13,89 @@
         android:background="@color/white" />
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/color_base_title"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:padding="@dimen/dp_10">
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dp_5"
             android:orientation="horizontal">
 
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:enabled="false"
-                android:textColor="@color/white"
-                android:textSize="@dimen/sp_16"
-                android:button="@mipmap/icon_bg64"
+                style="@style/style_subregion_rb"
+                android:button="@mipmap/icon_bg"
                 android:text="背景值" />
 
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:enabled="false"
+                style="@style/style_subregion_rb"
+                android:button="@mipmap/icon_instrument_white"
                 android:text="当前仪器" />
 
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:enabled="false"
+                style="@style/style_subregion_rb"
+                android:button="@mipmap/icon_person_white"
                 android:text="当前人员" />
         </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/subregion_tv_bg"
+                    style="@style/style_subregion_tv"
+                    android:drawableRight="@mipmap/icon_bg_cir"
+                    android:drawablePadding="@dimen/dp_15"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_5"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/subregion_tv_instrument"
+                    style="@style/style_subregion_tv"
+                    android:drawableRight="@mipmap/icon_bg_cir"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_5"
+                    android:text="we12gv" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/subregion_tv_user"
+                    style="@style/style_subregion_tv"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    android:text="张三"/>
+            </LinearLayout>
+        </LinearLayout>
+
     </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/subregion_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

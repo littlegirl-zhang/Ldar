@@ -68,12 +68,24 @@ public class FragmentTask extends Fragment {
     OnAdapterItemClickListener adapterItemClickListener = new OnAdapterItemClickListener() {
         @Override
         public void onItemClick(View view, int position) {
-            Intent intent = new Intent();
-            intent.setClass(getActivity(), TaskDetailActivity.class);
+            switch (view.getId()) {
+                case R.id.item_task_tv_uncheck:
+                    Logger.i("---仪器未校验---");
+                    break;
+                case R.id.item_task_tv_lackbg:
+                    Logger.i("---缺少背景值---");
+                    break;
+                case R.id.layout_left:
+                    Logger.i("---点整条 item 跳转---");
+                    Intent intent = new Intent();
+                    intent.setClass(getActivity(), TaskDetailActivity.class);
 //                if (bundle != null) {
 //                    intent.putExtras(bundle);
 //                }
-            startActivity(intent);
+                    startActivity(intent);
+                    break;
+            }
+
         }
     };
     TaskAdapter.OnItemSlideClickListener itemSlideClickListener = new TaskAdapter.OnItemSlideClickListener() {

@@ -1,8 +1,10 @@
 package com.sinopec.ldar.ui.activity;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
@@ -10,6 +12,7 @@ import android.widget.RadioGroup;
 
 import com.orhanobut.logger.Logger;
 import com.sinopec.ldar.R;
+import com.sinopec.ldar.mvp.model.entity.UserResult;
 import com.sinopec.ldar.ui.BaseActivity;
 import com.sinopec.ldar.ui.fragment.FragmentBg;
 import com.sinopec.ldar.ui.fragment.FragmentCheck;
@@ -30,6 +33,14 @@ public class MainActivity extends BaseActivity {
     public static final int TAB_CHECK = 1;
     public static final int TAB_BG = 2;
 
+    private String name;
+    private UserResult mUserResult;
+
+    @Override
+    protected void initParams(Bundle bundle) {
+        super.initParams(bundle);
+        mUserResult= (UserResult) bundle.getSerializable("userResult");
+    }
 
     @Override
     protected void initView(View view) {
@@ -44,7 +55,11 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void widgetClick(View view) {
         super.widgetClick(view);
-        startActivity(LoginActivity.class);
+        Bundle bundle=new Bundle();
+        bundle.putInt("exit",1);
+        bundle.putString("user",mUserResult.getName());
+        startActivity(LoginActivity.class,bundle);
+        finish();
     }
 
     RadioGroup.OnCheckedChangeListener checkedChangeListener = new RadioGroup.OnCheckedChangeListener() {
@@ -71,6 +86,7 @@ public class MainActivity extends BaseActivity {
             }
         }
     };
+
 
     public void changeSelectView(int index) {
         if (null == mFragmentManager) {

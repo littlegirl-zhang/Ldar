@@ -51,8 +51,13 @@ public class BaseActivity extends ABActivity{
     }
 
     @Override
-    protected boolean isTvRightGone() {
-        return true;
+    protected boolean isTvRightVisible() {
+        return false;
+    }
+
+    @Override
+    protected boolean isExitVisible() {
+        return false;
     }
 
     @Override
@@ -62,6 +67,6 @@ public class BaseActivity extends ABActivity{
 
     @Override
     protected boolean isLLRightVisiable() {
-        return true;
+        return false;
     }
 }

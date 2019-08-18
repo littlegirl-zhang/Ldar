@@ -3,9 +3,45 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:text="背景值"
-        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:text="校验日期"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <TextView
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:text="装置名称"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <TextView
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:text="背景值"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/color_base_title_light"
+        android:layout_height="2dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/bg_recycler"
+        android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

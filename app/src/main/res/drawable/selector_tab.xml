@@ -2,5 +2,5 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:drawable="@drawable/shape_solid_white" android:state_checked="true"></item>
-    <item android:drawable="@drawable/shape_solid_base_stroke_white" android:state_checked="false"></item>
+    <item android:drawable="@drawable/shape_stroke_white_solid_base" android:state_checked="false"></item>
 </selector>

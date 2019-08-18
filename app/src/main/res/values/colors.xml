@@ -9,12 +9,18 @@
     <color name="color_base_title_light">#2A64F6</color>
     <color name="color_base_title_pressed">#212189</color>
 
+    <color name="green">#0FA015</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#303030</color>
     <color name="red">#FF0000</color>
+    <color name="c_D53A3F">#D53A3F</color>
     <color name="btn_blue_pressed">#0066FF</color>
     <color name="btn_blue_normal">#1e90ff</color>
     <color name="color_f6">#f6f6f6</color>
     <color name="c_f87952">#f87952</color>
     <color name="c_404040">#404040</color>
+    <color name="c_c0">#c0c0c0</color>
     <color name="c_E0E0E0">#E0E0E0</color>
+    <color name="c_F38800">#F38800</color>
+    <color name="c_003CE0">#003CE0</color>
 </resources>

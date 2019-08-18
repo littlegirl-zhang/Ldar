@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sinopec.ldar.R;
 import com.sinopec.ldar.app.App;
@@ -40,13 +41,15 @@ public abstract class ABActivity extends AppCompatActivity implements View.OnCli
     private RelativeLayout mRlTop;
     // 返回键
     private LinearLayout mLLBack;
+    // 返回键
+    private LinearLayout mLLClose;
     // 标题
     private TextView mTvTitle;
     // 右键
-    private TextView mTvRight;
+    protected TextView mTvRight;
     private LinearLayout mLLRight;
     private ImageView mIvSearch;
-    private ImageView mIvFilter;
+    protected ImageView mIvFilter;
     // 内容根布局
     private LinearLayout mLlContent;
     // progressBar指示器
@@ -87,9 +90,13 @@ public abstract class ABActivity extends AppCompatActivity implements View.OnCli
         if (isIvBackGone()) {
             setIvBackGone();
         }
+        //显示关闭键
+        if (isExitVisible()) {
+            setExitVisible();
+        }
         // 隐藏右侧功能键
-        if (isTvRightGone()) {
-            setTvRightGone();
+        if (isTvRightVisible()) {
+            setTvRightVisible();
         }
         // 隐藏标题栏
         if (isTitlePanelGone()) {
@@ -154,6 +161,7 @@ public abstract class ABActivity extends AppCompatActivity implements View.OnCli
 
     private void initBaseListener() {
         mLLBack.setOnClickListener(this);
+        mLLClose.setOnClickListener(this);
         mTvRight.setOnClickListener(this);
         mIvFilter.setOnClickListener(this);
         mIvSearch.setOnClickListener(this);
@@ -165,6 +173,7 @@ public abstract class ABActivity extends AppCompatActivity implements View.OnCli
     private void initBaseView() {
         mRlTop = findViewById(R.id.rl_base_top);
         mLLBack = findViewById(R.id.ll_base_back);
+        mLLClose = findViewById(R.id.ll_base_close);
         mTvTitle = findViewById(R.id.tv_base_title);
         mTvRight = findViewById(R.id.tv_base_right);
         mIvFilter = findViewById(R.id.iv_base_filter);
@@ -221,9 +230,22 @@ public abstract class ABActivity extends AppCompatActivity implements View.OnCli
      */
     protected abstract void widgetClick(View view);
 
+    protected void showToast(final String msg) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(ABActivity.this, msg, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.ll_base_close:
+                finish();
+                break;
             case R.id.ll_base_back:
                 finish();
                 break;
@@ -353,13 +375,23 @@ public abstract class ABActivity extends AppCompatActivity implements View.OnCli
         mLLRight.setVisibility(View.VISIBLE);
     }
 
-    protected abstract boolean isTvRightGone();
+    protected abstract boolean isTvRightVisible();
 
     /**
-     * 隐藏右侧功能按钮
+     * 显示右侧功能按钮
      */
-    protected void setTvRightGone() {
-        mTvRight.setVisibility(View.GONE);
+    protected void setTvRightVisible() {
+        mTvRight.setVisibility(View.VISIBLE);
+    }
+
+    protected void setTvRightGone(boolean isGone) {
+        mTvRight.setVisibility(isGone ? View.GONE : View.VISIBLE);
+    }
+
+    protected abstract boolean isExitVisible();
+
+    protected void setExitVisible() {
+        mLLClose.setVisibility(View.VISIBLE);
     }
 
     /**

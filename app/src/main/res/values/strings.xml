@@ -2,7 +2,8 @@
     <string name="app_name">Ldar</string>
 
     <string name="login_operator">操作人员</string>
-    <string name="login_btn">登陆</string>
+    <string name="login_btn_login">登录</string>
+    <string name="login_btn_exit">退出</string>
 
     <string name="main_task">任务列表</string>
     <string name="main_check">仪器校验</string>
@@ -10,5 +11,11 @@
 
     <string name="task_detail_name">分区名称</string>
     <string name="task_detail_progress">完成进度</string>
+
+
+    <string name="check_add">新增仪器校验</string>
+    <string name="check_add_date">校验日期</string>
+    <string name="check_add_instrument">校验仪器</string>
+    <string name="check_add_equipment">校验装置</string>
 
 </resources>
