@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sinopec.ldar.ui.view.ChildClickableLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/begin_tv_type"
+        android:layout_width="wrap_content"
+        android:text="零气值"
+        android:layout_marginTop="@dimen/dp_50"
+        android:textSize="@dimen/sp_30"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/begin_ed_checkValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:gravity="center"
+        android:minWidth="100dp"
+        android:text="000"
+        android:textSize="80sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <com.sinopec.ldar.ui.view.CircleProgressbar
+            android:id="@+id/begin_tv_over"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_centerInParent="true"
+            android:text="结束"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/begin_layout_begin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/sp_20"
+            android:background="@drawable/shape_stroke_red_circel"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="开始校验"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_20" />
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/begin_rb_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/begin_layout_begin"
+            android:layout_marginLeft="100dp"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_toRightOf="@id/begin_layout_begin"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_input"
+            android:text="手动输入"
+            android:textColor="@color/check_color_input"
+            android:textSize="@dimen/sp_18" />
+    </RelativeLayout>
+
+</com.sinopec.ldar.ui.view.ChildClickableLinearLayout>

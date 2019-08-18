@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.CheckInstrumentActivity">
+
+    <RadioGroup
+        android:id="@+id/check_instrument_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/check_instrument_rb_zero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="零气值："
+                android:textSize="@dimen/sp_16" />
+
+            <EditText
+                android:id="@+id/check_instrument_ed_zero"
+                android:background="@drawable/selector_ed"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="100" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/check_instrument_rb_standard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="标准值："
+                android:textSize="@dimen/sp_16" />
+
+            <EditText
+                android:id="@+id/check_instrument_ed_standard"
+                android:background="@drawable/selector_ed"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="100" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/check_instrument_rb_drift"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="漂移值："
+                android:textSize="@dimen/sp_16" />
+
+            <EditText
+                android:id="@+id/check_instrument_ed_drift"
+                android:background="@drawable/selector_ed"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="100" />
+        </LinearLayout>
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="@dimen/dp_20"
+        android:background="@color/c_c0" />
+
+    <include layout="@layout/layout_begin" />
+</LinearLayout>

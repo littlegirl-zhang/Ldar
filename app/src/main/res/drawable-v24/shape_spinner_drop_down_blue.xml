@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape>
+            <corners android:radius="@dimen/dp_5"/>
+            <stroke android:width="1dp"
+                android:color="@color/color_base_title_light"/>
+        </shape>
+    </item>
+    <item>
+        <bitmap android:gravity="end"
+            android:src="@drawable/icon_sp_arraw"/>
+    </item>
+</layer-list>

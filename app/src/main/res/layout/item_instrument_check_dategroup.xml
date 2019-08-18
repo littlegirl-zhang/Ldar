@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <View
+        android:background="@color/color_base_title_light"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"/>
+    <TextView
+        android:id="@+id/item_check_group_date"
+        android:layout_width="match_parent"
+        android:text="2019-08-14"
+        android:layout_margin="@dimen/dp_10"
+        android:gravity="right"
+        android:layout_height="wrap_content" />
+    <View
+        android:background="@color/c_c0"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+</LinearLayout>

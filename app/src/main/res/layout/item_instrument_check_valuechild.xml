@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:background="@drawable/selector_content_white"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_10">
+
+    <TextView
+        android:id="@+id/item_check_child_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:drawableTop="@mipmap/icon_instrument"
+        android:text="NV1100" />
+
+    <RadioButton
+        android:id="@+id/item_check_child_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:button="@drawable/selector_input"
+        android:textColor="@color/check_color_input"
+        android:textSize="@dimen/sp_18" />
+
+    <LinearLayout
+        android:id="@+id/checkLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/item_check_child_input"
+        android:layout_toRightOf="@id/item_check_child_device"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="零气值" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="标准值" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="漂移值" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkLayout"
+        android:layout_alignRight="@id/checkLayout"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_toRightOf="@id/item_check_child_device"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/item_check_child_zero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_weight="1"
+            android:background="@drawable/selector_ed"
+            android:gravity="center"
+            android:text="10"
+            android:textColor="@color/check_color_input_black" />
+
+        <EditText
+            android:id="@+id/item_check_child_standard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_weight="1"
+            android:background="@drawable/selector_ed"
+            android:gravity="center"
+            android:text="80"
+            android:textColor="@color/check_color_input_black" />
+
+        <EditText
+            android:id="@+id/item_check_child_drift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_weight="1"
+            android:background="@drawable/selector_ed"
+            android:gravity="center"
+            android:text="100"
+            android:textColor="@color/check_color_input_black" />
+    </LinearLayout>
+
+</RelativeLayout>

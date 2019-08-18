@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.SubregionDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/icon_task"
+            android:drawablePadding="@dimen/dp_3"
+            android:text="描述:"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/point_tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:text="hsafd哈哈；阿菊；大BAVA平均分栏 ao;jdas;vbdasiflhduajkvcdnszvbailvndjkzsc" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/icon_label"
+            android:drawablePadding="@dimen/dp_3"
+            android:text="标签:"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/point_tv_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:text="hzsc" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/icon_extend"
+            android:drawablePadding="@dimen/dp_3"
+            android:text="扩展:"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/point_tv_extend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:text="hkzsc" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/icon_instrument"
+            android:drawablePadding="@dimen/dp_3"
+            android:text="仪器:"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/point_tv_insrument"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:text="ndjkzsc" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/icon_person"
+            android:drawablePadding="@dimen/dp_3"
+            android:text="人员:"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/point_tv_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:text="航三" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/dp_5"
+        android:background="@color/c_c0" />
+
+    <EditText
+        android:id="@+id/point_ed_checkValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_50"
+        android:background="@null"
+        android:gravity="center"
+        android:minWidth="100dp"
+        android:padding="@dimen/dp_5"
+        android:text="000"
+        android:textSize="60sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <com.sinopec.ldar.ui.view.CircleProgressbar
+            android:id="@+id/point_tv_over"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_centerInParent="true"
+            android:text="结束"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/point_layout_begin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/sp_20"
+            android:background="@drawable/shape_stroke_red_circel"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@mipmap/icon_fire" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="开始"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_20" />
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/point_rb_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/point_layout_begin"
+            android:layout_marginLeft="100dp"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_toRightOf="@id/point_layout_begin"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_input"
+            android:text="手动输入"
+            android:textColor="@color/check_color_input"
+            android:textSize="@dimen/sp_18" />
+    </RelativeLayout>
+
+
+</LinearLayout>
