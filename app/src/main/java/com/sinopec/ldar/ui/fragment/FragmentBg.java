@@ -11,17 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import com.orhanobut.logger.Logger;
 import com.sinopec.ldar.R;
-import com.sinopec.ldar.mvp.model.entity.InstrumentChildValue;
-import com.sinopec.ldar.ui.activity.AddNewActivity;
 import com.sinopec.ldar.ui.activity.CheckBgActivity;
-import com.sinopec.ldar.ui.activity.CheckInstrumentActivity;
 import com.sinopec.ldar.ui.adapter.BgAdapter;
-import com.sinopec.ldar.ui.adapter.InstrumentCheckAdapter;
 import com.sinopec.ldar.ui.view.OnAdapterItemClickListener;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentBg extends Fragment {

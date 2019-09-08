@@ -1,4 +1,4 @@
-package com.sinopec.ldar.mvp.model.entity;
+package com.sinopec.ldar.core.entity;
 
 public abstract class InstrumentCheckItem {
     public static final int TYPE_GROUP = 0xa01;

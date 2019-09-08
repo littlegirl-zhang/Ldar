@@ -1,4 +1,4 @@
-package com.sinopec.ldar.mvp.model.entity;
+package com.sinopec.ldar.core.entity;
 
 public class InstrumentGroupDate extends InstrumentCheckItem{
 

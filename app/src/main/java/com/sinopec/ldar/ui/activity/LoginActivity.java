@@ -1,22 +1,34 @@
 package com.sinopec.ldar.ui.activity;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.orhanobut.logger.Logger;
 import com.sinopec.ldar.R;
-import com.sinopec.ldar.mvp.model.entity.UserResult;
+import com.sinopec.ldar.core.entity.UserResult;
+import com.sinopec.ldar.core.service.UserResultService;
+import com.sinopec.ldar.core.utils.DbUtil;
 import com.sinopec.ldar.ui.BaseActivity;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Response;
 
 public class LoginActivity extends BaseActivity {
 
@@ -51,7 +63,7 @@ public class LoginActivity extends BaseActivity {
                     showToast("请选择用户");
                 } else {
                     Bundle bundle=new Bundle();
-                    bundle.putSerializable("userResult", (Serializable) mSelectUser);
+                    bundle.putParcelable("userResult", (Parcelable) mSelectUser);
                     startActivity(MainActivity.class,bundle);
                     finish();
                 }
@@ -76,37 +88,50 @@ public class LoginActivity extends BaseActivity {
             return;
         }
         //获取登录用户列表
-        mUserAll = new ArrayList<>();
-        UserResult userResult = new UserResult();
-        userResult.setName("张三");
-        userResult.setPassword("qw11");
-        userResult.setPrdtCellId(2.0);
-        userResult.setPrdtCellSname("hsfah");
-        userResult.setUserId(3.0);
+//        mUserAll = new ArrayList<>();
+//        UserResult userResult = new UserResult();
+//        userResult.setName("张三");
+//        userResult.setPassword("qw11");
+//        userResult.setPrdtCellId(2.0);
+//        userResult.setPrdtCellSname("hsfah");
+//        userResult.setUserId(3.0);
+//
+//        UserResult userResult2 = new UserResult();
+//        userResult2.setName("李四");
+//        userResult2.setPassword("qw11");
+//        userResult2.setPrdtCellId(2.0);
+//        userResult2.setPrdtCellSname("hsfah");
+//        userResult2.setUserId(3.0);
+//
+//        UserResult userResult3 = new UserResult();
+//        userResult3.setName("王五");
+//        userResult3.setPassword("qw11");
+//        userResult3.setPrdtCellId(2.0);
+//        userResult3.setPrdtCellSname("hsfah");
+//        userResult3.setUserId(3.0);
+//        mUserAll.add(userResult);
+//        mUserAll.add(userResult2);
+//        mUserAll.add(userResult3);
 
-        UserResult userResult2 = new UserResult();
-        userResult2.setName("李四");
-        userResult2.setPassword("qw11");
-        userResult2.setPrdtCellId(2.0);
-        userResult2.setPrdtCellSname("hsfah");
-        userResult2.setUserId(3.0);
-
-        UserResult userResult3 = new UserResult();
-        userResult3.setName("王五");
-        userResult3.setPassword("qw11");
-        userResult3.setPrdtCellId(2.0);
-        userResult3.setPrdtCellSname("hsfah");
-        userResult3.setUserId(3.0);
-        mUserAll.add(userResult);
-        mUserAll.add(userResult2);
-        mUserAll.add(userResult3);
-        for (UserResult user :
-                mUserAll) {
-            if (user != null && !TextUtils.isEmpty(user.getName())) {
-                mListUserName.add(user.getName());
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    UserResultService service = new UserResultService();
+                    mUserAll = service.GetUserList(true);
+                    for (UserResult user :
+                            mUserAll) {
+                        if (user != null && !TextUtils.isEmpty(user.getName())) {
+                            mListUserName.add(user.getName());
+                        }
+                    }
+                    Logger.i("listUser:"+mListUserName);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-        }
-        Logger.i("listUser:"+mListUserName);
+        }).start();
+
     }
 
     AdapterView.OnItemSelectedListener itemSelectedListener = new AdapterView.OnItemSelectedListener() {
@@ -149,7 +174,21 @@ public class LoginActivity extends BaseActivity {
     }
 
     @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (grantResults.length == 0 || PackageManager.PERMISSION_GRANTED != grantResults[0]) {
+            Toast.makeText(this, "你拒绝了权限，无法创建!", Toast.LENGTH_LONG).show();
+        } else {
+        }
+    }
+
+    @Override
     protected void initView(View view) {
+        ActivityCompat.requestPermissions(this, new String[]{android
+                                .Manifest.permission.WRITE_EXTERNAL_STORAGE}, 10001);
+
+        DbUtil.getInstance().initGreenDao(getApplicationContext(),"zhf");
+
         super.initView(view);
         Logger.i("initView");
         mSpUser = findViewById(R.id.login_sp_user);

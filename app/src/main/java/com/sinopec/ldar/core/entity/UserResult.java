@@ -1,13 +1,33 @@
-package com.sinopec.ldar.mvp.model.entity;
+package com.sinopec.ldar.core.entity;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class UserResult implements Serializable {
+import org.greenrobot.greendao.annotation.Entity;
+
+import org.greenrobot.greendao.annotation.Generated;
+
+@Entity
+public class UserResult implements Parcelable {
     private double UserId;
     private String Name;
     private String Password;
     private double PrdtCellId;
     private String PrdtCellSname;
+
+    @Generated(hash = 371972321)
+    public UserResult(double UserId, String Name, String Password,
+            double PrdtCellId, String PrdtCellSname) {
+        this.UserId = UserId;
+        this.Name = Name;
+        this.Password = Password;
+        this.PrdtCellId = PrdtCellId;
+        this.PrdtCellSname = PrdtCellSname;
+    }
+
+    @Generated(hash = 185447815)
+    public UserResult() {
+    }
 
     public double getUserId() {
         return UserId;
@@ -58,5 +78,15 @@ public class UserResult implements Serializable {
                 ", PrdtCellId=" + PrdtCellId +
                 ", PrdtCellSname='" + PrdtCellSname + '\'' +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+
     }
 }

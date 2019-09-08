@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.sinopec.ldar.R;
 import com.sinopec.ldar.app.App;
+import com.sinopec.ldar.ui.widget.CustomProgressBar;
 
 public abstract class ABActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -53,7 +54,7 @@ public abstract class ABActivity extends AppCompatActivity implements View.OnCli
     // 内容根布局
     private LinearLayout mLlContent;
     // progressBar指示器
-//    private CustomProgressBar mPb;
+    private CustomProgressBar mPb;
 
 
     @Override
@@ -395,24 +396,6 @@ public abstract class ABActivity extends AppCompatActivity implements View.OnCli
     }
 
     /**
-     * 是否显示指示器
-     *
-     * @param isShow
-     */
-    protected void showIndicator(boolean isShow) {
-        if (isShow) {
-        } else {
-
-        }
-    }
-
-    protected void setIndicatorMessage(String message) {
-//        if (mPb != null) {
-//            mPb.setMessage(message);
-//        }
-    }
-
-    /**
      * 是否显示标题栏
      *
      * @return
@@ -462,6 +445,25 @@ public abstract class ABActivity extends AppCompatActivity implements View.OnCli
         if (token != null) {
             InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             im.hideSoftInputFromWindow(token, InputMethodManager.HIDE_NOT_ALWAYS);
+        }
+    }
+
+    /**
+     * 是否显示指示器
+     *
+     * @param isShow
+     */
+    protected void showIndicator(boolean isShow) {
+        if (isShow) {
+            mPb.show();
+        } else {
+            mPb.dismiss();
+        }
+    }
+
+    protected void setIndicatorMessage(String message) {
+        if (mPb != null) {
+            mPb.setMessage(message);
         }
     }
 

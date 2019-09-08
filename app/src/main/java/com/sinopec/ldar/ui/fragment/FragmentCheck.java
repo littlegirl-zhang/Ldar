@@ -14,13 +14,12 @@ import android.widget.Button;
 
 import com.orhanobut.logger.Logger;
 import com.sinopec.ldar.R;
-import com.sinopec.ldar.mvp.model.entity.InstrumentCheckItem;
-import com.sinopec.ldar.mvp.model.entity.InstrumentChildValue;
-import com.sinopec.ldar.mvp.model.entity.InstrumentGroupDate;
+import com.sinopec.ldar.core.entity.InstrumentCheckItem;
+import com.sinopec.ldar.core.entity.InstrumentChildValue;
+import com.sinopec.ldar.core.entity.InstrumentGroupDate;
 import com.sinopec.ldar.ui.activity.AddNewActivity;
 import com.sinopec.ldar.ui.activity.CheckInstrumentActivity;
 import com.sinopec.ldar.ui.adapter.InstrumentCheckAdapter;
-import com.sinopec.ldar.ui.adapter.TaskAdapter;
 import com.sinopec.ldar.ui.view.OnAdapterItemClickListener;
 
 import java.util.ArrayList;

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
@@ -12,7 +11,7 @@ import android.widget.RadioGroup;
 
 import com.orhanobut.logger.Logger;
 import com.sinopec.ldar.R;
-import com.sinopec.ldar.mvp.model.entity.UserResult;
+import com.sinopec.ldar.core.entity.UserResult;
 import com.sinopec.ldar.ui.BaseActivity;
 import com.sinopec.ldar.ui.fragment.FragmentBg;
 import com.sinopec.ldar.ui.fragment.FragmentCheck;
@@ -39,7 +38,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initParams(Bundle bundle) {
         super.initParams(bundle);
-        mUserResult= (UserResult) bundle.getSerializable("userResult");
+        mUserResult= (UserResult) bundle.getParcelable("userResult");
     }
 
     @Override

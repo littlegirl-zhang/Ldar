@@ -6,6 +6,7 @@ import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
 import com.orhanobut.logger.PrettyFormatStrategy;
+import com.sinopec.ldar.core.utils.DbUtil;
 import com.sinopec.ldar.utils.AppUtils;
 import com.sinopec.ldar.utils.LogCatStrategy;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -45,7 +46,6 @@ public class App extends Application {
 
         // OkHttpUtils初始化
         OkHttpUtils.initClient(okHttpClient);
-
         AppUtils.init(getApplicationContext());
 
     }

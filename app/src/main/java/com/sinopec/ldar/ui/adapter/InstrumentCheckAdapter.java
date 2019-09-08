@@ -11,9 +11,9 @@ import android.widget.TextView;
 
 import com.orhanobut.logger.Logger;
 import com.sinopec.ldar.R;
-import com.sinopec.ldar.mvp.model.entity.InstrumentCheckItem;
-import com.sinopec.ldar.mvp.model.entity.InstrumentChildValue;
-import com.sinopec.ldar.mvp.model.entity.InstrumentGroupDate;
+import com.sinopec.ldar.core.entity.InstrumentCheckItem;
+import com.sinopec.ldar.core.entity.InstrumentChildValue;
+import com.sinopec.ldar.core.entity.InstrumentGroupDate;
 import com.sinopec.ldar.ui.view.OnAdapterItemClickListener;
 import com.sinopec.ldar.utils.DateUtil;
 
