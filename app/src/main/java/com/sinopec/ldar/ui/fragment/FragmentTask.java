@@ -45,7 +45,9 @@ public class FragmentTask extends Fragment {
         Map<String, Object> map;
         for (int i = 0; i < 20; i++) {
             map = new HashMap<>();
-            map.put("cardId", "测试测试是十四号 if 好烦嗲破发后到 v 阿迪女哈UI风好大 v 奶茶" + i);
+            map.put("taskDesc", "请检测人员对常减压装置进行点位检测，要求在任务时间针对该装置20个分区完成检测任务！");
+            map.put("taskPro","360/400");
+
             mList.add(map);
         }
 

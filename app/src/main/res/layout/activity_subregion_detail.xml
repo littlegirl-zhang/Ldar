@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_5"
-            android:text="hsafd哈哈；阿菊；大BAVA平均分栏 ao;jdas;vbdasiflhduajkvcdnszvbailvndjkzsc" />
+            android:text="请按时针对该点位进行气体检测" />
     </LinearLayout>
 
     <LinearLayout
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_5"
-            android:text="hzsc" />
+            android:text="920" />
     </LinearLayout>
 
     <LinearLayout
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_5"
-            android:text="hkzsc" />
+            android:text="" />
     </LinearLayout>
 
     <LinearLayout
@@ -90,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_5"
-            android:text="ndjkzsc" />
+            android:text="NXY0010" />
     </LinearLayout>
 
     <LinearLayout

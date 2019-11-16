@@ -32,7 +32,7 @@ public class BgAdapter extends RecyclerView.Adapter<BgAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.date.setText("2019-01-23");
-        viewHolder.name.setText("常压装置");
+        viewHolder.name.setText("常减压装置");
     }
 
     @Override

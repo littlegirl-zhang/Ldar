@@ -57,7 +57,7 @@
             android:layout_alignBaseline="@id/check_bg_name"
             android:layout_marginLeft="@dimen/dp_30"
             android:layout_toRightOf="@id/check_bg_name"
-            android:text="常压装置2"
+            android:text="常减压装置2"
             android:textColor="@color/white"
             android:textSize="@dimen/sp_16" />
     </RelativeLayout>

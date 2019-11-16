@@ -44,16 +44,16 @@ public class LoginActivity extends BaseActivity {
     private int type = -1;
     private String user;
 
-    @Override
-    protected void initParams(Bundle bundle) {
-        super.initParams(bundle);
-        if (bundle!=null){
-            type = bundle.getInt("exit");
-            user = bundle.getString("user");
-        }
-        Logger.i("type:"+type+"--user:"+user);
-    }
-
+//    @Override
+//    protected void initParams(Bundle bundle) {
+//        super.initParams(bundle);
+//        if (bundle != null) {
+//            type = bundle.getInt("exit");
+//            user = bundle.getString("user");
+//        }
+//        Logger.i("type:" + type + "--user:" + user);
+//    }
+//
     @Override
     protected void widgetClick(View view) {
         super.widgetClick(view);
@@ -62,9 +62,9 @@ public class LoginActivity extends BaseActivity {
                 if (mSelectUser == null) {
                     showToast("请选择用户");
                 } else {
-                    Bundle bundle=new Bundle();
-                    bundle.putParcelable("userResult", (Parcelable) mSelectUser);
-                    startActivity(MainActivity.class,bundle);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("userResult", (Serializable) mSelectUser);
+                    startActivity(MainActivity.class, bundle);
                     finish();
                 }
                 break;
@@ -84,53 +84,60 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void doBusiness(Context context) {
         super.doBusiness(context);
-        if (type!=-1){
+        if (type != -1) {
             return;
         }
         //获取登录用户列表
-//        mUserAll = new ArrayList<>();
-//        UserResult userResult = new UserResult();
-//        userResult.setName("张三");
-//        userResult.setPassword("qw11");
-//        userResult.setPrdtCellId(2.0);
-//        userResult.setPrdtCellSname("hsfah");
-//        userResult.setUserId(3.0);
-//
-//        UserResult userResult2 = new UserResult();
-//        userResult2.setName("李四");
-//        userResult2.setPassword("qw11");
-//        userResult2.setPrdtCellId(2.0);
-//        userResult2.setPrdtCellSname("hsfah");
-//        userResult2.setUserId(3.0);
-//
-//        UserResult userResult3 = new UserResult();
-//        userResult3.setName("王五");
-//        userResult3.setPassword("qw11");
-//        userResult3.setPrdtCellId(2.0);
-//        userResult3.setPrdtCellSname("hsfah");
-//        userResult3.setUserId(3.0);
-//        mUserAll.add(userResult);
-//        mUserAll.add(userResult2);
-//        mUserAll.add(userResult3);
+        mUserAll = new ArrayList<>();
+        UserResult userResult = new UserResult();
+        userResult.setName("张三");
+        userResult.setPassword("qw11");
+        userResult.setPrdtCellId(2.0);
+        userResult.setPrdtCellSname("hsfah");
+        userResult.setUserId(3.0);
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    UserResultService service = new UserResultService();
-                    mUserAll = service.GetUserList(true);
-                    for (UserResult user :
-                            mUserAll) {
-                        if (user != null && !TextUtils.isEmpty(user.getName())) {
-                            mListUserName.add(user.getName());
-                        }
-                    }
-                    Logger.i("listUser:"+mListUserName);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        UserResult userResult2 = new UserResult();
+        userResult2.setName("李四");
+        userResult2.setPassword("qw11");
+        userResult2.setPrdtCellId(2.0);
+        userResult2.setPrdtCellSname("hsfah");
+        userResult2.setUserId(3.0);
+
+        UserResult userResult3 = new UserResult();
+        userResult3.setName("王五");
+        userResult3.setPassword("qw11");
+        userResult3.setPrdtCellId(2.0);
+        userResult3.setPrdtCellSname("hsfah");
+        userResult3.setUserId(3.0);
+        mUserAll.add(userResult);
+        mUserAll.add(userResult2);
+        mUserAll.add(userResult3);
+        for (UserResult user :
+                mUserAll) {
+            if (user != null && !TextUtils.isEmpty(user.getName())) {
+                mListUserName.add(user.getName());
             }
-        }).start();
+        }
+        Logger.i("listUser:" + mListUserName);
+
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    UserResultService service = new UserResultService();
+//                    mUserAll = service.GetUserList(true);
+//                    for (UserResult user :
+//                            mUserAll) {
+//                        if (user != null && !TextUtils.isEmpty(user.getName())) {
+//                            mListUserName.add(user.getName());
+//                        }
+//                    }
+//                    Logger.i("listUser:"+mListUserName);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }).start();
 
     }
 
@@ -173,23 +180,15 @@ public class LoginActivity extends BaseActivity {
         return true;
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (grantResults.length == 0 || PackageManager.PERMISSION_GRANTED != grantResults[0]) {
-            Toast.makeText(this, "你拒绝了权限，无法创建!", Toast.LENGTH_LONG).show();
-        } else {
-        }
-    }
 
     @Override
     protected void initView(View view) {
-        ActivityCompat.requestPermissions(this, new String[]{android
-                                .Manifest.permission.WRITE_EXTERNAL_STORAGE}, 10001);
-
-        DbUtil.getInstance().initGreenDao(getApplicationContext(),"zhf");
-
         super.initView(view);
+//        ActivityCompat.requestPermissions(this, new String[]{android
+//                .Manifest.permission.WRITE_EXTERNAL_STORAGE}, 10001);
+//
+//        DbUtil.getInstance().initGreenDao(getApplicationContext(), "zhf");
+
         Logger.i("initView");
         mSpUser = findViewById(R.id.login_sp_user);
         mBtnLogin = findViewById(R.id.login_btn_login);

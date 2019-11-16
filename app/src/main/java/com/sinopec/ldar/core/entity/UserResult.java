@@ -1,23 +1,27 @@
 package com.sinopec.ldar.core.entity;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import org.greenrobot.greendao.annotation.Entity;
-
 import org.greenrobot.greendao.annotation.Generated;
+import org.greenrobot.greendao.annotation.Id;
+
+import java.io.Serializable;
 
 @Entity
-public class UserResult implements Parcelable {
+public class UserResult implements Serializable {
+
+    private static final long serialVersionUID = 5499430722247256919L;
+    @Id
+    private int id;
     private double UserId;
     private String Name;
     private String Password;
     private double PrdtCellId;
     private String PrdtCellSname;
 
-    @Generated(hash = 371972321)
-    public UserResult(double UserId, String Name, String Password,
+    @Generated(hash = 900019307)
+    public UserResult(int id, double UserId, String Name, String Password,
             double PrdtCellId, String PrdtCellSname) {
+        this.id = id;
         this.UserId = UserId;
         this.Name = Name;
         this.Password = Password;
@@ -69,6 +73,14 @@ public class UserResult implements Parcelable {
         PrdtCellSname = prdtCellSname;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "UserResult{" +
@@ -80,13 +92,4 @@ public class UserResult implements Parcelable {
                 '}';
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-
-    }
 }

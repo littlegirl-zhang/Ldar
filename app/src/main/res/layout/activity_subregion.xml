@@ -75,7 +75,7 @@
                     android:drawablePadding="@dimen/dp_10"
                     android:paddingLeft="@dimen/dp_8"
                     android:paddingRight="@dimen/dp_5"
-                    android:text="we12gv" />
+                    android:text="NCX0010" />
             </LinearLayout>
 
             <LinearLayout

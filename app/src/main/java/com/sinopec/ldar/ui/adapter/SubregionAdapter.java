@@ -38,7 +38,7 @@ public class SubregionAdapter extends RecyclerView.Adapter<SubregionAdapter.View
         holder.desc.setText(cards.get(position).get("cardId").toString());
         holder.pointName.setText(cards.get(position).get("cardId").toString());
         holder.label.setText("999");
-        holder.extendNum.setText("a1111");
+        holder.extendNum.setText("");
     }
 
     @Override

@@ -45,7 +45,7 @@ public class FragmentBg extends Fragment {
                 //如果没有数据就跳转
                 Intent intent=new Intent();
                 Bundle bundle=new Bundle();
-                bundle.putString("name","常压装置");
+                bundle.putString("name","常减压装置");
                 intent.putExtras(bundle);
                 intent.setClass(getActivity(), CheckBgActivity.class);
                 startActivity(intent);

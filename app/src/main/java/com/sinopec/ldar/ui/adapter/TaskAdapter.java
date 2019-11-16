@@ -46,7 +46,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.SimpleHolder>
     public void onBindViewHolder(final SimpleHolder holder, final int position) {
         simpleHolder = holder;
         this.position = position;
-        holder.desc.setText(cards.get(position).get("cardId").toString());
+        holder.desc.setText(cards.get(position).get("taskDesc").toString());
+        holder.progress.setText(cards.get(position).get("taskPro")+"");
         holder.lackGb.setOnClickListener(this);
         holder.unchecked.setOnClickListener(this);
         holder.layout_left.getLayoutParams().width = RecyclerUtils.getScreenWidth(context);

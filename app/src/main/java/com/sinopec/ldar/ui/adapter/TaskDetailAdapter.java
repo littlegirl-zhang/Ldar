@@ -37,7 +37,7 @@ public class TaskDetailAdapter extends RecyclerView.Adapter<TaskDetailAdapter.Vi
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.name.setText(cards.get(position).get("cardId").toString());
-        holder.progress.setText("12/90");
+        holder.progress.setText("18/20");
     }
 
     @Override

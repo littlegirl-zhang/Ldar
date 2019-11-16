@@ -38,7 +38,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initParams(Bundle bundle) {
         super.initParams(bundle);
-        mUserResult= (UserResult) bundle.getParcelable("userResult");
+        mUserResult= (UserResult) bundle.getSerializable("userResult");
     }
 
     @Override

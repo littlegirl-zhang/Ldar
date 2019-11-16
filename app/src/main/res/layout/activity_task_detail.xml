@@ -44,7 +44,7 @@
                 android:drawableLeft="@mipmap/icon_task_progress_white"
                 android:textColor="@color/white"
                 android:gravity="center"
-                android:text="12/90" />
+                android:text="360/400" />
         </LinearLayout>
 
         <TextView
@@ -56,7 +56,7 @@
             android:layout_marginRight="@dimen/dp_10"
             android:textSize="@dimen/sp_16"
             android:textColor="@color/white"
-            android:text="1111112safdagdhahahah哈哈哈大会；啊积分大；哦bdavadvava" />
+            android:text="请检测人员对常减压装置进行点位检测，要求在任务时间针对该装置20个分区完成检测任务！" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -75,7 +75,7 @@
                 android:drawablePadding="@dimen/dp_5"
                 android:textSize="@dimen/sp_16"
                 android:textColor="@color/white"
-                android:text="2018-01-01 (逾期96天)" />
+                android:text="2019-06-01 (逾期96天)" />
 
             <TextView
                 android:id="@+id/task_detail_tv_exported"
